@@ -20,8 +20,8 @@ RUN (git clone https://github.com/kimchi-project/kimchi.git &&\
   cd / &&\
   rm -rf /var/lib/kimchi/isos /kimchi)
 
-RUN (sed -i "s/#create_iso_pool = true/create_iso_pool = false/g" /etc/kimchi/kimchi.conf &&\
-  sed -i "s/#display_proxy_port = 64667/display_proxy_port = 64668/g" /etc/kimchi/kimchi.conf)
+RUN (sed -i "s/#create_iso_pool = true/create_iso_pool = false/g" /etc/wok/plugins.d/kimchi.conf &&\
+  sed -i "s/#display_proxy_port = 64667/display_proxy_port = 64668/g" /etc/wok/plugins.d/kimchi.conf)
 
 ENTRYPOINT ["kimchid"]
 CMD ["--host=0.0.0.0"]
